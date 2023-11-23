@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você que não aceite</title>
+    <style>
+        #conteudo{
+            background: #ff7a7a;
+            font-size: ARIAL;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .btn{
+            background: black;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 80px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="conteudo">
+        <h2>VAI CASAR COMIGO NEH??</h2>
+        <button class="btn" onclick="EU()">SIMM</button>
+        <button id="nao" class="btn" onmouseover="desvia(this)">OUTRO</button>
+
+        <script>
+            function EU(){
+                alert("VOCÊ QUE NÃO ACEITASSE PARA VER, TE AMOOO :)");
+            }
+
+            function getRandomPosition() {
+                const x = Math.floor(Math.random() * window.innerWidth);
+                const y = Math.floor(Math.random() * window.innerHeight);
+                return { x, y };
+            }
+
+            function desvia(element){
+                const newPos = getRandomPosition();
+                element.style.position = 'absolute';
+                element.style.left = newPos.x + 'px';
+                element.style.top = newPos.y + 'px';
+            }
+        </script>
+    </div>
+</body>
+</html>
